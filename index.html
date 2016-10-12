@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <link href="https://datatables.net/download/build/nightly/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+  <script src="https://datatables.net/download/build/nightly/jquery.dataTables.js"></script>
+
+  <meta charset=utf-8 />
+  <style>
+    body {
+      font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #fff;
+    }
+
+
+    div.container {
+      min-width: 980px;
+      margin: 0 auto;
+      max-width: 95%
+    } 
+  </style>
+  <title>DataTables - JS Bin</title>
+</head>
+<body>
+  <textarea id="inputt"></textarea><input type="button" id="runParse" value="run" />
+  <hr>
+  <br/>
+  <br/>
+  <div class="container" id="container">
+    <table id="example" class="display" width="100%">
+    </table>
+  </div>
+  <script>
+
+    $(document).ready( function () {
+
+      function generateUIDNotMoreThan1million() {
+        return ("0000" + (Math.random()*Math.pow(36,4) << 0).toString(36)).slice(-4)
+      }
+
+
+      function clicky () {
+        var data = JSON.parse($("#inputt").val()); 
+        $.each(data, function(index, value) {
+          if(value != null && !$.isEmptyObject(value)) {
+            console.log("index", index)
+            var x = null;
+            if(!$.isArray(value)) {
+              //wrap in array
+              x = [value];
+            } else {
+              x = denormalizeData(value)
+            }
+            var uuid = generateUIDNotMoreThan1million();
+
+            var cols = [];
+
+            var exampleRecord = x[0];
+            var keys = Object.keys(exampleRecord);
+            keys.forEach(function(k) {
+              cols.push({
+                title: k,
+                data: k
+                //optionally do some type detection here for render function
+              });
+            });
+            $("#container").append("<hr/><br/><h1>"+index+"</h1><br/><table id='"+uuid+"' class='display' width='100%'></table>")
+            //initialize DataTables
+            var table = $('#' + uuid).DataTable({
+              columns: cols
+            });
+            //add data and draw
+            table.rows.add(x).draw();  
+          }
+        });
+      }
+
+      $("#runParse").click(function(){clicky()});
+
+
+      function denormalizeData(data) {
+        console.log(data);
+        if($.isArray(data)) {
+          var topArray = [];
+
+          $.each(data, function(num, singleObjLevel1) {
+            var reconstructedObj = {}
+            $.each(singleObjLevel1, function(key, value){
+              if(!$.isArray(value)){
+                reconstructedObj[key] = value
+              } else {
+                reconstructedObj[key] = JSON.stringify(value)
+              }
+            });
+            topArray.push(reconstructedObj);
+          });
+          return topArray;
+        } else {
+          return data;
+        }
+      }
+    });
+
+</script>
+</body>
+</html>
