@@ -94,7 +94,7 @@
                 reconstructedObj[key] = value;
                 if(key.includes("Date")) {
                   y = new Date(value);
-                  reconstructedObj[key] = y.toString("yyyy-MM-dd HH:mm:ss");
+                  reconstructedObj[key] = y.toString("yyyy-MM-dd HH:mm");
                 }
               } else {
                 reconstructedObj[key] = JSON.stringify(value)
