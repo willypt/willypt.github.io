@@ -91,7 +91,11 @@
             var reconstructedObj = {}
             $.each(singleObjLevel1, function(key, value){
               if(!$.isArray(value)){
-                reconstructedObj[key] = value
+                reconstructedObj[key] = value;
+                if(key.includes("Date")) {
+                  y = new Date(value);
+                  reconstructedObj[key] = y.toString();
+                }
               } else {
                 reconstructedObj[key] = JSON.stringify(value)
               }
