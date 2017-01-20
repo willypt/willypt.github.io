@@ -1,0 +1,6596 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Swagger API",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "172.17.132.45:8080",
+  "basePath": "/x-inventory",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/inventory/checkStockAvailability": {
+      "get": {
+        "description": "checkStockAvailability",
+        "operationId": "checkStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«checkstockavailabilityresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/countLevel2InventoryByLevel2MerchantCodeAndStock": {
+      "get": {
+        "description": "countLevel2InventoryByLevel2MerchantCodeAndStock",
+        "operationId": "countLevel2InventoryByLevel2MerchantCodeAndStock",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "stock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "stock"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventorycountresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability": {
+      "post": {
+        "description": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "operationId": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeIgnoreStockAvailability": {
+      "post": {
+        "description": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeIgnoreStockAvailability",
+        "operationId": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeIgnoreStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedCheckStockAvailability": {
+      "post": {
+        "description": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedCheckStockAvailability",
+        "operationId": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedCheckStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedIgnoreStockAvailability": {
+      "post": {
+        "description": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedIgnoreStockAvailability",
+        "operationId": "decrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedIgnoreStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementLevel1OriginalStockByLevel1IdAndMerchantCode": {
+      "post": {
+        "description": "decrementLevel1OriginalStockByLevel1IdAndMerchantCode",
+        "operationId": "decrementLevel1OriginalStockByLevel1IdAndMerchantCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryOriginalStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementLevel1StockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability": {
+      "post": {
+        "description": "decrementLevel1StockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "operationId": "decrementLevel1StockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementUpdateLevel2": {
+      "post": {
+        "description": "decrementUpdateInventoryLevel2",
+        "operationId": "decrementUpdateInventoryLevel2",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level2InventoryUpdateRequest",
+            "schema": {
+              "$ref": "#/definitions/Level2InventoryUpdateRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/decrementUpdateLevel2Single": {
+      "post": {
+        "description": "decrementUpdateInventoryLevel2",
+        "operationId": "decrementUpdateInventoryLevel21",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/deleteInventorySchedulerByStoreIdAndIdAndMerchantCodeAndRunDateAndIsLevel2": {
+      "post": {
+        "description": "deleteInventorySchedulerByStoreIdAndIdAndMerchantCodeAndRunDateAndIsLevel2",
+        "operationId": "deleteInventorySchedulerByStoreIdAndIdAndMerchantCodeAndRunDateAndIsLevel2",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "isLevel2",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "isLevel2"
+          },
+          {
+            "name": "runDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "runDate"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GdnBaseRestResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findActiveInactiveInventoryScheduler": {
+      "get": {
+        "description": "findActiveInactiveInventoryScheduler",
+        "operationId": "findActiveInactiveInventoryScheduler",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "isActive"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«inventoryschedulerresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findByStoreIdLevel1IdAndMerchantCode": {
+      "get": {
+        "description": "findByStoreIdLevel1IdAndMerchantCodeAndWarehouseCode",
+        "operationId": "findByStoreIdLevel1IdAndMerchantCodeAndWarehouseCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findByStoreIdLevel1IdAndMerchantCodeAndWarehouseCode": {
+      "get": {
+        "description": "findByStoreIdLevel1IdAndMerchantCodeAndWarehouseCode",
+        "operationId": "findByStoreIdLevel1IdAndMerchantCodeAndWarehouseCode1",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findByStoreIdLevel1IdOrWarehouseCity": {
+      "get": {
+        "description": "findByStoreIdLevel1IdOrWarehouseCity",
+        "operationId": "findByStoreIdLevel1IdOrWarehouseCity",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "warehouseCity",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCity"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findByStoreIdLevel2IdAndLevel2MerchantCode": {
+      "get": {
+        "description": "findByStoreIdLevel2IdAndLevel2MerchantCode",
+        "operationId": "findByStoreIdLevel2IdAndLevel2MerchantCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findByStoreIdLevel2IdOrLevel1IdOrMerchantCode": {
+      "get": {
+        "description": "findByStoreIdLevel2IdOrLevel1Id",
+        "operationId": "findByStoreIdLevel2IdOrLevel1Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findInventoryScheduler": {
+      "get": {
+        "description": "findInventoryScheduler",
+        "operationId": "findInventoryScheduler",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "isLevel2",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "isLevel2"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«inventoryschedulerresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findLevel1ListOfByLevel1Id": {
+      "post": {
+        "description": "findLevel1InventoryByLevel1Id",
+        "operationId": "findLevel1InventoryByLevel1Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level1InventoryIdListRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryIdListRequest"
+            }
+          },
+          {
+            "name": "pageTo",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "pageTo"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "pageSize"
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "sortDirection"
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "sortColumn"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findLevel1ListOfByLevel1IdWithWarehouseDetails": {
+      "post": {
+        "description": "findLevel1InventoryByLevel1IdWithWarehouseDetails",
+        "operationId": "findLevel1InventoryByLevel1IdWithWarehouseDetails",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level1InventoryIdListRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryIdListRequest"
+            }
+          },
+          {
+            "name": "pageTo",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "pageTo"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "pageSize"
+          },
+          {
+            "name": "sortDirection",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "sortDirection"
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "sortColumn"
+          },
+          {
+            "name": "aggregateLevel1",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "aggregateLevel1"
+          },
+          {
+            "name": "onlyAvailableWarehouse",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "onlyAvailableWarehouse"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findLevel2ByStockMinStockMaxAndLevel2MerchantCode": {
+      "get": {
+        "description": "findLevel2InventoryByStockMinStockMaxAndLevel2MerchantCode",
+        "operationId": "findLevel2InventoryByStockMinStockMaxAndLevel2MerchantCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "stockMin",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "stockMin"
+          },
+          {
+            "name": "stockMax",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "stockMax"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findLevel2InventoryByListOfLevel2IdandListOfLevel2MerchantCode": {
+      "post": {
+        "description": "findLevel2InventoryByLevel2Id",
+        "operationId": "findLevel2InventoryByLevel2Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level2InventoryRequestList",
+            "schema": {
+              "$ref": "#/definitions/Level2InventoryRequestList"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/findLevel2ListOfByLevel2IdAndLevel2MerchantCode": {
+      "post": {
+        "description": "findLevel2InventoryByLevel2IdAndLevel2MerchantCode",
+        "operationId": "findLevel2InventoryByLevel2IdAndLevel2MerchantCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level2Ids",
+            "schema": {
+              "$ref": "#/definitions/Level2InventoryListRequest"
+            }
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/getDetailProduct": {
+      "get": {
+        "description": "getDetailProduct",
+        "operationId": "getDetailProduct",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/getRemainingStock": {
+      "get": {
+        "description": "getRemainingStock",
+        "operationId": "getRemainingStock",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«stockavailabilityresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability": {
+      "post": {
+        "description": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "operationId": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeIgnoreStockAvailability": {
+      "post": {
+        "description": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeIgnoreStockAvailability",
+        "operationId": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeIgnoreStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedCheckStockAvailability": {
+      "post": {
+        "description": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedCheckStockAvailability",
+        "operationId": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedCheckStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedIgnoreStockAvailability": {
+      "post": {
+        "description": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedIgnoreStockAvailability",
+        "operationId": "incrementLevel1OriginalStockAndStockAfterReservedByLevel1IdAndMerchantCodeUsingStockIncrementAndStockReservedIgnoreStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementLevel1OriginalStockByLevel1IdAndMerchantCode": {
+      "post": {
+        "description": "incrementLevel1OriginalStockByLevel1IdAndMerchantCode",
+        "operationId": "incrementLevel1OriginalStockByLevel1IdAndMerchantCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryOriginalStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementLevel1StockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability": {
+      "post": {
+        "description": "incrementLevel1StockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "operationId": "incrementLevel1StockAfterReservedByLevel1IdAndMerchantCodeCheckStockAvailability",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "incrementRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryStockIncrementRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementUpdateLevel2": {
+      "post": {
+        "description": "incrementUpdateInventoryLevel2",
+        "operationId": "incrementUpdateInventoryLevel2",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level2InventoryUpdateRequest",
+            "schema": {
+              "$ref": "#/definitions/Level2InventoryUpdateRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/incrementUpdateLevel2Single": {
+      "post": {
+        "description": "incrementUpdateInventoryLevel2",
+        "operationId": "incrementUpdateInventoryLevel21",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/insertLevel1": {
+      "post": {
+        "description": "insertInventoryLevel1",
+        "operationId": "insertInventoryLevel1",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "listOfLevel1InventoryRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryListOfLevel1InventoryRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GdnBaseRestResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/insertLevel1Single": {
+      "post": {
+        "description": "insertInventoryLevel1Single",
+        "operationId": "insertInventoryLevel1Single",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "level1InventoryRequest",
+            "schema": {
+              "$ref": "#/definitions/Level1InventoryRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GdnBaseRestResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/insertLevel2": {
+      "post": {
+        "description": "insertInventoryLevel2",
+        "operationId": "insertInventoryLevel2",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "listOfLevel2InventoryRequest",
+            "schema": {
+              "$ref": "#/definitions/Level2InventoryListOfLevel2InventoryRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1level2listinventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/insertScheduler": {
+      "post": {
+        "description": "insertInventoryScheduler",
+        "operationId": "insertInventoryScheduler",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "listOfInventorySchedulerRequest",
+            "schema": {
+              "$ref": "#/definitions/InventoryListOfInventoryScheduler"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GdnBaseRestResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateDetailLevel1": {
+      "post": {
+        "description": "updateDetailLevel1Inventory",
+        "operationId": "updateDetailLevel1Inventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "warehouseCity",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCity"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "syncedToLevel2",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "syncedToLevel2"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "shippingOrigin",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "shippingOrigin"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateDetailLevel2": {
+      "post": {
+        "description": "updateDetailLevel2Inventory",
+        "operationId": "updateDetailLevel2Inventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "syncedToLevel1",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "syncedToLevel1"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateDetailMasterPickupPoint": {
+      "post": {
+        "description": "updateDetailMasterPickupPoint",
+        "operationId": "updateDetailMasterPickupPoint",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "pickupPointCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "pickupPointCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GdnBaseRestResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateInventoryScheduler": {
+      "post": {
+        "description": "inventoryUpdateInventoryScheduler",
+        "operationId": "inventoryUpdateInventoryScheduler",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "req",
+            "schema": {
+              "$ref": "#/definitions/InventorySchedulerRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«inventoryschedulerresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateIsActiveInventoryScheduler": {
+      "post": {
+        "description": "updateIsActiveInventoryScheduler",
+        "operationId": "updateIsActiveInventoryScheduler",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "isLevel2",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "isLevel2"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "isActive"
+          },
+          {
+            "name": "runDate",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "runDate"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«inventoryschedulerresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateLevel1ByLevel1IdAndMerchantCode": {
+      "post": {
+        "description": "updateLevel1InventoryByLevel1IdAndMerchantCode",
+        "operationId": "updateLevel1InventoryByLevel1IdAndMerchantCode",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateLevel1OriginalStockAndStockAfterReserved": {
+      "post": {
+        "description": "updateIncrementLevel1InventoryOriginalStockAndStockAfterReserved",
+        "operationId": "updateIncrementLevel1InventoryOriginalStockAndStockAfterReserved",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateLevel1OriginalStockAndStockAfterReservedWithoutDelta": {
+      "post": {
+        "description": "updateLevel1OriginalStockAndStockAfterReservedWithoutDelta",
+        "operationId": "updateLevel1OriginalStockAndStockAfterReservedWithoutDelta",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "newOriginalStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "newOriginalStock"
+          },
+          {
+            "name": "newStockAfterReserved",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "newStockAfterReserved"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateLevel2Level1": {
+      "post": {
+        "description": "updateInventoryLevel2Level1",
+        "operationId": "updateInventoryLevel2Level1",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "listOfLevel2InventoryRequest",
+            "schema": {
+              "$ref": "#/definitions/Level2InventoryListOfLevel2InventoryRequest"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestlistresponse«level1level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateLevel2OriginalStock": {
+      "post": {
+        "description": "updateInventoryLevel2OriginalStock",
+        "operationId": "updateInventoryLevel2OriginalStock",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateLevel2StockAndOriginalStock": {
+      "post": {
+        "description": "updateIncrementLevel2InventoryStockAndOriginalStock",
+        "operationId": "updateIncrementLevel2InventoryStockAndOriginalStock",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateNumberOfFp": {
+      "post": {
+        "description": "updateNumberOfFp",
+        "operationId": "updateNumberOfFp",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "numberOfFp",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numberOfFp"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryupdatefpresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateScheduler": {
+      "post": {
+        "description": "inventoryUpdateInventory",
+        "operationId": "inventoryUpdateInventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1level2listinventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateSetIsNotReallocateBackToReservedWhenStockAfterReservedZeroLevel2Inventory": {
+      "post": {
+        "description": "updateSetIsNotReallocateBackToReservedWhenStockAfterReservedZeroLevel2Inventory",
+        "operationId": "updateSetIsNotReallocateBackToReservedWhenStockAfterReservedZeroLevel2Inventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "isNotReallocateBackToReservedWhenStockAfterReservedZero",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "isNotReallocateBackToReservedWhenStockAfterReservedZero"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateSetLevel1OriginalStockAndStockAfterReserved": {
+      "post": {
+        "description": "updateSetLevel1InventoryOriginalStockAndStockAfterReserved",
+        "operationId": "updateSetLevel1InventoryOriginalStockAndStockAfterReserved",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level1Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level1Id"
+          },
+          {
+            "name": "merchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "merchantCode"
+          },
+          {
+            "name": "warehouseCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "warehouseCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateSetLevel2StockAndOriginalStock": {
+      "post": {
+        "description": "updateSetLevel2InventoryStockAndOriginalStock",
+        "operationId": "updateSetLevel2InventoryStockAndOriginalStock",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "numOfStock",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "numOfStock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateSetZeroStockAndDecrementByAvailableStockOriginalStockLevel2Inventory": {
+      "post": {
+        "description": "updateSetZeroStockAndDecrementByAvailableStockOriginalStockLevel2Inventory",
+        "operationId": "updateSetZeroStockAndDecrementByAvailableStockOriginalStockLevel2Inventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/updateSyncedToLevel1": {
+      "post": {
+        "description": "updateSyncedToLevel1OfLevel2Inventory",
+        "operationId": "updateSyncedToLevel1OfLevel2Inventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "level2Id",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2Id"
+          },
+          {
+            "name": "level2MerchantCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "level2MerchantCode"
+          },
+          {
+            "name": "syncedToLevel1",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "description": "syncedToLevel1"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          },
+          {
+            "name": "transactionDescription",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "transactionDescription"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1level2inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/inventory/version": {
+      "get": {
+        "description": "getVersion",
+        "operationId": "getVersion",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "storeId"
+          },
+          {
+            "name": "requestId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "requestId"
+          },
+          {
+            "name": "channelId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "channelId"
+          },
+          {
+            "name": "clientId",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "clientId"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Gdnrestsingleresponse«level1inventoryresponse»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {}
+          }
+        },
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Level1InventoryResponse": {
+      "title": "Level1InventoryResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "level1Id": {
+          "type": "string"
+        },
+        "stockAfterReserved": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "originalStock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "warehouseCity": {
+          "type": "string"
+        },
+        "syncedToLevel2": {
+          "type": "boolean"
+        },
+        "warehouseCode": {
+          "type": "string"
+        },
+        "shippingOrigin": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "warehouseAvailable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "level1Id",
+        "stockAfterReserved",
+        "originalStock",
+        "merchantCode",
+        "warehouseCity",
+        "syncedToLevel2",
+        "warehouseCode",
+        "shippingOrigin",
+        "latitude",
+        "longitude",
+        "warehouseAvailable"
+      ]
+    },
+    "Gdnrestsingleresponse«level1inventoryresponse»": {
+      "title": "GdnRestSingleResponse«Level1InventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Level1InventoryResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "Gdnrestlistresponse«level1inventoryresponse»": {
+      "title": "GdnRestListResponse«Level1InventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level1InventoryResponse"
+          }
+        },
+        "pageMetaData": {
+          "$ref": "#/definitions/PageMetaData"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "content",
+        "pageMetaData"
+      ]
+    },
+    "PageMetaData": {
+      "title": "PageMetaData",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "pageSize": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageNumber": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalRecords": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "required": [
+        "pageSize",
+        "pageNumber",
+        "totalRecords"
+      ]
+    },
+    "InventorySchedulerResponse": {
+      "title": "InventorySchedulerResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "runDate": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "level2": {
+          "type": "boolean"
+        },
+        "increment": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "merchantCode",
+        "stock",
+        "runDate",
+        "active",
+        "level2",
+        "increment"
+      ]
+    },
+    "Gdnrestlistresponse«inventoryschedulerresponse»": {
+      "title": "GdnRestListResponse«InventorySchedulerResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InventorySchedulerResponse"
+          }
+        },
+        "pageMetaData": {
+          "$ref": "#/definitions/PageMetaData"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "content",
+        "pageMetaData"
+      ]
+    },
+    "GdnBaseRestResponse": {
+      "title": "GdnBaseRestResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success"
+      ]
+    },
+    "InventoryListOfInventoryScheduler": {
+      "title": "InventoryListOfInventoryScheduler",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "listOfInventorySchedulerRequest": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InventorySchedulerRequest"
+          }
+        }
+      },
+      "required": [
+        "listOfInventorySchedulerRequest"
+      ]
+    },
+    "InventorySchedulerRequest": {
+      "title": "InventorySchedulerRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "runDate": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "level2": {
+          "type": "boolean"
+        },
+        "increment": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "merchantCode",
+        "stock",
+        "runDate",
+        "active",
+        "level2",
+        "increment"
+      ]
+    },
+    "Gdnrestsingleresponse«inventoryschedulerresponse»": {
+      "title": "GdnRestSingleResponse«InventorySchedulerResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/InventorySchedulerResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "Gdnrestlistresponse«level2inventoryresponse»": {
+      "title": "GdnRestListResponse«Level2InventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level2InventoryResponse"
+          }
+        },
+        "pageMetaData": {
+          "$ref": "#/definitions/PageMetaData"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "content",
+        "pageMetaData"
+      ]
+    },
+    "Level2InventoryResponse": {
+      "title": "Level2InventoryResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "level1Id": {
+          "type": "string"
+        },
+        "level2Id": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "originalStock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "level2MerchantCode": {
+          "type": "string"
+        },
+        "syncedToLevel1": {
+          "type": "boolean"
+        },
+        "pickupPointCode": {
+          "type": "string"
+        },
+        "shippingOrigin": {
+          "type": "string"
+        },
+        "oosSchedulerMarker": {
+          "type": "string"
+        },
+        "notReallocateBackToReservedWhenStockAfterReservedZero": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "level1Id",
+        "level2Id",
+        "stock",
+        "originalStock",
+        "merchantCode",
+        "level2MerchantCode",
+        "syncedToLevel1",
+        "pickupPointCode",
+        "shippingOrigin",
+        "oosSchedulerMarker",
+        "notReallocateBackToReservedWhenStockAfterReservedZero"
+      ]
+    },
+    "Level2InventoryListRequest": {
+      "title": "Level2InventoryListRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level2Ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "level2Ids"
+      ]
+    },
+    "Gdnrestsingleresponse«level2inventoryresponse»": {
+      "title": "GdnRestSingleResponse«Level2InventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Level2InventoryResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "Level1Level2InventoryResponse": {
+      "title": "Level1Level2InventoryResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "level1Inventory": {
+          "$ref": "#/definitions/Level1InventoryResponse"
+        },
+        "level2Inventory": {
+          "$ref": "#/definitions/Level2InventoryResponse"
+        },
+        "oos": {
+          "type": "boolean"
+        },
+        "allocatedQuantity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "success",
+        "level1Inventory",
+        "level2Inventory",
+        "oos",
+        "allocatedQuantity"
+      ]
+    },
+    "Gdnrestsingleresponse«level1level2inventoryresponse»": {
+      "title": "GdnRestSingleResponse«Level1Level2InventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Level1Level2InventoryResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "Level1InventoryStockIncrementRequest": {
+      "title": "Level1InventoryStockIncrementRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level1Id": {
+          "type": "string"
+        },
+        "stockIncrement": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stockReserved": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "warehouseCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level1Id",
+        "stockIncrement",
+        "stockReserved",
+        "merchantCode",
+        "warehouseCode"
+      ]
+    },
+    "Level1InventoryOriginalStockIncrementRequest": {
+      "title": "Level1InventoryOriginalStockIncrementRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level1Id": {
+          "type": "string"
+        },
+        "originalStockIncrement": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "warehouseCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level1Id",
+        "originalStockIncrement",
+        "merchantCode",
+        "warehouseCode"
+      ]
+    },
+    "Level2InventoryRequest": {
+      "title": "Level2InventoryRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level1Id": {
+          "type": "string"
+        },
+        "level2Id": {
+          "type": "string"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "level2MerchantCode": {
+          "type": "string"
+        },
+        "syncedToLevel1": {
+          "type": "boolean"
+        },
+        "originalStock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pickupPointCode": {
+          "type": "string"
+        },
+        "notReallocateBackToReservedWhenStockAfterReservedZero": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "level1Id",
+        "level2Id",
+        "stock",
+        "merchantCode",
+        "level2MerchantCode",
+        "syncedToLevel1",
+        "originalStock",
+        "pickupPointCode",
+        "notReallocateBackToReservedWhenStockAfterReservedZero"
+      ]
+    },
+    "Level2InventoryUpdateRequest": {
+      "title": "Level2InventoryUpdateRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "listOfLevel2InventoryRequest": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level2InventoryRequest"
+          }
+        }
+      },
+      "required": [
+        "listOfLevel2InventoryRequest"
+      ]
+    },
+    "Level1InventoryIdListRequest": {
+      "title": "Level1InventoryIdListRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level1Ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "level1Ids"
+      ]
+    },
+    "Level2InventoryListRequestOfLevel2Inventory": {
+      "title": "Level2InventoryListRequestOfLevel2Inventory",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level2Id": {
+          "type": "string"
+        },
+        "level2MerchantCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level2Id",
+        "level2MerchantCode"
+      ]
+    },
+    "Level2InventoryRequestList": {
+      "title": "Level2InventoryRequestList",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "listOfLevel2InventoryListRequestOfLevel2Inventory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level2InventoryListRequestOfLevel2Inventory"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "listOfLevel2InventoryListRequestOfLevel2Inventory"
+      ]
+    },
+    "Gdnrestsingleresponse«stockavailabilityresponse»": {
+      "title": "GdnRestSingleResponse«StockAvailabilityResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/StockAvailabilityResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "StockAvailabilityResponse": {
+      "title": "StockAvailabilityResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "stock": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "success",
+        "stock"
+      ]
+    },
+    "Level1InventoryRequest": {
+      "title": "Level1InventoryRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "level1Id": {
+          "type": "string"
+        },
+        "warehouseCity": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number",
+          "format": "double"
+        },
+        "lon": {
+          "type": "number",
+          "format": "double"
+        },
+        "stockAfterReserved": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "originalStock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "warehouseCode": {
+          "type": "string"
+        },
+        "syncedToLevel2": {
+          "type": "boolean"
+        },
+        "numberOfFp": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "shippingOrigin": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level1Id",
+        "warehouseCity",
+        "lat",
+        "lon",
+        "stockAfterReserved",
+        "originalStock",
+        "merchantCode",
+        "warehouseCode",
+        "syncedToLevel2",
+        "numberOfFp",
+        "shippingOrigin"
+      ]
+    },
+    "Level1InventoryListOfLevel1InventoryRequest": {
+      "title": "Level1InventoryListOfLevel1InventoryRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "listOfLevel1InventoryRequest": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level1InventoryRequest"
+          }
+        }
+      },
+      "required": [
+        "listOfLevel1InventoryRequest"
+      ]
+    },
+    "Level1Level2ListInventoryResponse": {
+      "title": "Level1Level2ListInventoryResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "level1Level2Inventories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level1Level2InventoryResponse"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "success",
+        "level1Level2Inventories"
+      ]
+    },
+    "Level2InventoryListOfLevel2InventoryRequest": {
+      "title": "Level2InventoryListOfLevel2InventoryRequest",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "listOfLevel2InventoryRequest": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level2InventoryRequest"
+          }
+        }
+      },
+      "required": [
+        "listOfLevel2InventoryRequest"
+      ]
+    },
+    "Gdnrestsingleresponse«level1level2listinventoryresponse»": {
+      "title": "GdnRestSingleResponse«Level1Level2ListInventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Level1Level2ListInventoryResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "Gdnrestlistresponse«level1level2inventoryresponse»": {
+      "title": "GdnRestListResponse«Level1Level2InventoryResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Level1Level2InventoryResponse"
+          }
+        },
+        "pageMetaData": {
+          "$ref": "#/definitions/PageMetaData"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "content",
+        "pageMetaData"
+      ]
+    },
+    "Gdnrestsingleresponse«level1inventoryupdatefpresponse»": {
+      "title": "GdnRestSingleResponse«Level1InventoryUpdateFpResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Level1InventoryUpdateFpResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "Level1InventoryUpdateFpResponse": {
+      "title": "Level1InventoryUpdateFpResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "level1Id": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number",
+          "format": "double"
+        },
+        "lon": {
+          "type": "number",
+          "format": "double"
+        },
+        "stockAfterReserved": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "originalStock": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "merchantCode": {
+          "type": "string"
+        },
+        "warehouseCity": {
+          "type": "string"
+        },
+        "warehouseCode": {
+          "type": "string"
+        },
+        "syncedToLevel2": {
+          "type": "boolean"
+        },
+        "numberOfFp": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "level1Id",
+        "lat",
+        "lon",
+        "stockAfterReserved",
+        "originalStock",
+        "merchantCode",
+        "warehouseCity",
+        "warehouseCode",
+        "syncedToLevel2",
+        "numberOfFp"
+      ]
+    },
+    "Gdnrestsingleresponse«checkstockavailabilityresponse»": {
+      "title": "GdnRestSingleResponse«CheckStockAvailabilityResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/CheckStockAvailabilityResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    },
+    "CheckStockAvailabilityResponse": {
+      "title": "CheckStockAvailabilityResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "success"
+      ]
+    },
+    "Level2InventoryCountResponse": {
+      "title": "Level2InventoryCountResponse",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "storeId": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "updatedDate": {
+          "type": "string"
+        },
+        "updatedBy": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "storeId",
+        "createdDate",
+        "createdBy",
+        "updatedDate",
+        "updatedBy",
+        "success",
+        "total"
+      ]
+    },
+    "Gdnrestsingleresponse«level2inventorycountresponse»": {
+      "title": "GdnRestSingleResponse«Level2InventoryCountResponse»",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "value": {
+          "$ref": "#/definitions/Level2InventoryCountResponse"
+        }
+      },
+      "required": [
+        "requestId",
+        "errorMessage",
+        "errorCode",
+        "success",
+        "value"
+      ]
+    }
+  }
+}
