@@ -37,24 +37,25 @@
 
     function d (e) {
       e.preventDefault();
-      const addIFrame = () => {
-        const iframe = document.createElement("iframe");
-        iframe.style.border = "none";
-        iframe.style.width = "1px";
-        iframe.style.height = "1px";
-        iframe.src = 'tokopedia://webview?url=https://m.tokopedia.com/salam';
-        document.body.appendChild(iframe);
-      }
+//       const addIFrame = () => {
+//         const iframe = document.createElement("iframe");
+//         iframe.style.border = "none";
+//         iframe.style.width = "1px";
+//         iframe.style.height = "1px";
+//         iframe.src = 'tokopedia://webview?url=https://m.tokopedia.com/salam';
+//         document.body.appendChild(iframe);
+//       }
       const fallbackFunction = () => {
         window.location.replace('https://www.tokopedia.com/bayar-sekaligus');
       };
-      addIFrame();
+//       addIFrame();
+      window.location.replace("tokopedia://webview?url=https://m.tokopedia.com/salam");
       window.setTimeout(fallbackFunction, 3000);
     }
 
   </script>
   
-  <a href="#" onclick="d(event)">Bayar sekaligus Browser / Applink Salam</a><br>
+  <a href="#" onclick="d(event)">Bayar sekaligus Browser / Applink Salam Replace</a><br>
   <a href="https://www.tokopedia.com/bayar-sekaligus" >Bayar sekaligus</a><br><br><br><br><br>
   <a href="https://www.tokopedia.com/hotel" onclick="a(event)">Hotel Homepage - Open Self Prog Href</a><br>
   <a href="https://www.tokopedia.com/hotel" onclick="b(event)">Hotel Homepage - Open Self Prog Assign</a><br>
