@@ -46,10 +46,10 @@
         document.body.appendChild(iframe);
       }
       const fallbackFunction = () => {
-        window.location.assign('https://www.tokopedia.com/bayar-sekaligus');
+        window.location.replace('https://www.tokopedia.com/bayar-sekaligus');
       };
       addIFrame();
-      window.setTimeout(fallbackFunction, 250);
+      window.setTimeout(fallbackFunction, 3000);
     }
 
   </script>
