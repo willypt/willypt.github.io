@@ -19,9 +19,29 @@
       e.preventDefault();
       var wx = window.open('https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2', '_blank')
     }
-
+    
+    function a (e) {
+      e.preventDefault();
+      window.location.href="https://www.tokopedia.com/hotel";
+    }
+    
+    function b (e) {
+      e.preventDefault();
+      window.location.assign("https://www.tokopedia.com/hotel");
+    }
+    
+    function c (e) {
+      e.preventDefault();
+      window.location = "https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2";
+    }
 
   </script>
+  
+  <a href="https://www.tokopedia.com/hotel" onclick="a(event)">Hotel Homepage - Open Self Prog Href</a><br>
+  <a href="https://www.tokopedia.com/hotel" onclick="b(event)">Hotel Homepage - Open Self Prog Assign</a><br>
+  <a href="https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2" onclick="c(event)">Grandmas Hotel - Open Self Prog</a><br>
+
+
   
   <a href="https://www.tokopedia.com/hotel">Hotel Homepage - Open Self</a><br>
   <a href="https://www.tokopedia.com/promo/digital-hotel-2/">Promo Hotel DG Hotel 2 - Open Self</a><br>
