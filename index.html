@@ -7,80 +7,34 @@
 </head>
 <body>
   <script>
-    function x (e) {
-      e.preventDefault();
-      var wx = window.open('https://www.tokopedia.com/hotel', '_blank')
-    }
-    function y (e) {
-      e.preventDefault();
-      var wx = window.open('https://www.tokopedia.com/promo/digital-hotel-2/', '_blank')
-    }
-    function z (e) {
-      e.preventDefault();
-      var wx = window.open('https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2', '_blank')
-    }
-    
-    function a (e) {
-      e.preventDefault();
-      window.location.href="https://www.tokopedia.com/hotel";
-    }
-    
-    function b (e) {
-      e.preventDefault();
-      window.location.assign("https://www.tokopedia.com/hotel");
-    }
-    
-    function c (e) {
-      e.preventDefault();
-      window.location = "https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2";
+
+    function logToList(text) {
+      const node = document.createElement("li");
+      const textnode = document.createTextNode(text);
+      node.appendChild(textnode);
+      logDiv.appendChild(node)
+
     }
 
-    function d (e) {
-      e.preventDefault();
-//       const addIFrame = () => {
-//         const iframe = document.createElement("iframe");
-//         iframe.style.border = "none";
-//         iframe.style.width = "1px";
-//         iframe.style.height = "1px";
-//         iframe.src = 'tokopedia://webview?url=https://m.tokopedia.com/salam';
-//         document.body.appendChild(iframe);
-//       }
-      const fallbackFunction = () => {
-        window.location.replace('https://www.tokopedia.com/bayar-sekaligus');
+    const reader = new NDEFReader();
+    const logDiv = window.getElementById('log');
+    reader.scan().then(() => {
+      logToList('Scan Success!')
+      reader.onerror = () => {
+        logToList("Cannot read data from the NFC tag. Try another one?")
       };
-//       addIFrame();
-      window.location.replace("tokopedia://webview?url=https://m.tokopedia.com/salam");
-      window.setTimeout(fallbackFunction, 3000);
-    }
-
+      reader.onreading = event => {
+        logToList('NDEF message read.');
+        logToList(JSON.stringify(event));
+        console.log({event})
+      };
+    }).catch(error => {
+      logToList(`Error! Scan failed to start: ${error}.`);
+    });
   </script>
-  
-  <a href="#" onclick="d(event)">Bayar sekaligus Browser / Applink Salam Replace</a><br>
-  <a href="https://www.tokopedia.com/bayar-sekaligus" >Bayar sekaligus</a><br><br><br><br><br>
-  <a href="https://www.tokopedia.com/hotel" onclick="a(event)">Hotel Homepage - Open Self Prog Href</a><br>
-  <a href="https://www.tokopedia.com/hotel" onclick="b(event)">Hotel Homepage - Open Self Prog Assign</a><br>
-  <a href="https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2" onclick="c(event)">Grandmas Hotel - Open Self Prog</a><br>
 
+  <ul id="log">
 
-  
-  <a href="https://www.tokopedia.com/hotel">Hotel Homepage - Open Self</a><br>
-  <a href="https://www.tokopedia.com/promo/digital-hotel-2/">Promo Hotel DG Hotel 2 - Open Self</a><br>
-  <a href="https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2">Grandmas Hotel - Open Self</a><br>
-
-  <br/><br/><br/>
-  <a href="https://www.tokopedia.com/hotel" onclick="x(event)">Hotel Homepage - New Tab Prog0</a><br>
-  <a href="https://www.tokopedia.com/promo/digital-hotel-2/" onclick="y(event)">Promo Hotel DG Hotel 2 - New Tab Prog0</a><br>
-  <a href="https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2" onclick="z(event)">Grandmas Hotel - New Tab Prog0</a><br>
-
-  <br/><br/><br/>
-  <a href="#" onclick="x(event)">Hotel Homepage - New Tab Prog</a><br>
-  <a href="#" onclick="y(event)">Promo Hotel DG Hotel 2 - New Tab Prog</a><br>
-  <a href="#" onclick="z(event)">Grandmas Hotel - New Tab Prog</a><br>
-
-  <br/><br/><br/>
-  <a href="https://www.tokopedia.com/hotel" target="_blank" rel="noopener noreferrer">Hotel Homepage - New Tab</a><br>
-  <a href="https://www.tokopedia.com/promo/digital-hotel-2/" target="_blank" rel="noopener noreferrer">Promo Hotel DG Hotel 2 - New Tab</a><br>
-  <a href="https://www.tokopedia.com/hotel/indonesia/h/grandmas-plus-hotel-airport-910584/?id=910584&name=grandmas-plus-hotel-airport&check_in=2020-07-17&check_out=2020-07-18&room=1&adult=2" target="_blank" rel="noopener noreferrer">Grandmas Hotel - New Tab</a><br>
-
+  </ul>
 </body>
 </html>
