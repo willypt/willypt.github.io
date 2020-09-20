@@ -26,9 +26,10 @@
       const reader = new NDEFReader();
       await reader.scan();
 
-      reader.onreading = (tag) => {
+      reader.onreading = (...tag) => {
+        console.log({tag})
         logToList('NDEF message read.');
-        logToList(JSON.stringify(tag));
+        // logToList(JSON.stringify(tag));
       }
 
       reader.onerror = () => {
