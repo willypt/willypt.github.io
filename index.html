@@ -6,9 +6,14 @@
   <title>JS Bin</title>
 </head>
 <body>
+  <ul id="log">
+
+  </ul>
+
   <script>
 
     function logToList(text) {
+      const logDiv = document.getElementById("log")
       const node = document.createElement("li");
       const textnode = document.createTextNode(text);
       node.appendChild(textnode);
@@ -16,25 +21,18 @@
 
     }
 
+    // Start NFC scanning and prompt user if needed.
     const reader = new NDEFReader();
-    const logDiv = window.getElementById('log');
-    reader.scan().then(() => {
-      logToList('Scan Success!')
-      reader.onerror = () => {
-        logToList("Cannot read data from the NFC tag. Try another one?")
-      };
-      reader.onreading = event => {
-        logToList('NDEF message read.');
-        logToList(JSON.stringify(event));
-        console.log({event})
-      };
-    }).catch(error => {
-      logToList(`Error! Scan failed to start: ${error}.`);
-    });
+    await reader.scan();
+
+    reader.onreading = (tag) => {
+      logToList('NDEF message read.');
+      logToList(JSON.stringify(tag));
+    }
+
+    reader.onerror = () => {
+      logToList("Cannot read data from the NFC tag. Try another one?")
+    };
   </script>
-
-  <ul id="log">
-
-  </ul>
 </body>
 </html>
