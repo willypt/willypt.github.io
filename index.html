@@ -115,9 +115,7 @@
           photo = document.getElementById("photo");
           startbutton = document.getElementById("startbutton");
           navigator.mediaDevices.getUserMedia({
-            facingMode: {
-              ideal: "user"
-            },
+            facingMode: "user",
             video: true,
             audio: false
           }).then((stream) => {
@@ -131,9 +129,7 @@
           canvas2 = document.getElementById("canvas2");
           startbutton2 = document.getElementById("startbutton2");
           navigator.mediaDevices.getUserMedia({
-            facingMode: {
-              ideal: "environment"
-            },
+            facingMode: "environment",
             video: true,
             audio: false
           }).then((stream) => {
