@@ -538,7 +538,7 @@
                 
                 // Method 1: Try custom URL scheme
                 try {
-                    const safariUrl = `x-web-search://?${encodeURIComponent(url)}`;
+                    const safariUrl = `com-apple-mobilesafari-tab://?${encodeURIComponent(url)}`;
                     window.location.href = safariUrl;
                     logTestResult(`iOS: Attempted Safari URL scheme`, 'success');
                 } catch (e) {
