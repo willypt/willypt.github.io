@@ -220,16 +220,32 @@
                     <span class="status-value" id="platform">Loading...</span>
                 </div>
                 <div class="status-item">
-                    <span class="status-label">Is TikTok Webview:</span>
+                    <span class="status-label">Is Any Webview:</span>
+                    <span class="status-value" id="isWebView">Loading...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">TikTok:</span>
                     <span class="status-value" id="isTikTok">Loading...</span>
                 </div>
                 <div class="status-item">
-                    <span class="status-label">Is Facebook Webview:</span>
+                    <span class="status-label">Facebook:</span>
                     <span class="status-value" id="isFacebook">Loading...</span>
                 </div>
                 <div class="status-item">
-                    <span class="status-label">Is Any Webview:</span>
-                    <span class="status-value" id="isWebView">Loading...</span>
+                    <span class="status-label">Instagram:</span>
+                    <span class="status-value" id="isInstagram">Loading...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Twitter:</span>
+                    <span class="status-value" id="isTwitter">Loading...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">LinkedIn:</span>
+                    <span class="status-value" id="isLinkedIn">Loading...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Generic WebView (wv):</span>
+                    <span class="status-value" id="hasWebViewMarker">Loading...</span>
                 </div>
                 <div class="status-item">
                     <span class="status-label">Operating System:</span>
@@ -243,9 +259,12 @@
                     <li><strong>Primary Test:</strong> The "🎵 Open Noice.id" button tests your specific URL with login parameters</li>
                     <li><strong>TikTok:</strong> Share this page link in a TikTok post or add to your bio, then open from the TikTok app</li>
                     <li><strong>Facebook:</strong> Share this page link in a Facebook post or message, then open from the Facebook app</li>
-                    <li><strong>Regular Browser:</strong> Open this page directly in Safari, Chrome, or any browser</li>
-                    <li><strong>Compare Results:</strong> Test the same buttons across different environments</li>
-                    <li>Use the buttons below to test different external browser opening methods</li>
+                    <li><strong>Instagram:</strong> Share this page link in your Instagram story or bio, then open from the Instagram app</li>
+                    <li><strong>Twitter:</strong> Tweet this page link, then open from the Twitter app</li>
+                    <li><strong>LinkedIn:</strong> Share this page link in a LinkedIn post, then open from the LinkedIn app</li>
+                    <li><strong>Other Apps:</strong> Many apps use webviews - this tool detects generic `wv` markers too</li>
+                    <li><strong>Regular Browser:</strong> Open this page directly in Safari, Chrome, or any browser to compare</li>
+                    <li><strong>Compare Results:</strong> Test the same buttons across different environments to see the differences</li>
                 </ul>
             </div>
 
@@ -296,26 +315,84 @@
     </div>
 
     <script>
-        // Comprehensive webview detection for TikTok and Facebook
+        // Comprehensive webview detection for multiple platforms
         function detectWebView() {
-            const userAgent = navigator.userAgent.toLowerCase();
+            const userAgent = navigator.userAgent;
+            const userAgentLower = userAgent.toLowerCase();
             
             // TikTok detection
-            const isTikTok = userAgent.includes('trill') || 
-                             userAgent.includes('bytedance') || 
-                             userAgent.includes('bytelo') ||
-                             userAgent.includes('musical.ly');
+            const isTikTok = userAgentLower.includes('trill') || 
+                             userAgentLower.includes('bytedance') || 
+                             userAgentLower.includes('bytelo') ||
+                             userAgentLower.includes('musical.ly');
             
             // Facebook detection
-            const isFacebook = userAgent.includes('fb_iab') || 
-                               userAgent.includes('fban') || 
-                               userAgent.includes('fbav');
+            const isFacebook = userAgentLower.includes('fb_iab') || 
+                               userAgentLower.includes('fban') || 
+                               userAgentLower.includes('fbav');
+            
+            // Instagram detection
+            const isInstagram = userAgentLower.includes('instagram') ||
+                               (userAgentLower.includes('fb_iab') && userAgentLower.includes('instagramapp'));
+            
+            // Twitter detection
+            const isTwitter = userAgentLower.includes('twitter') ||
+                             userAgentLower.includes('twitterapp');
+            
+            // LinkedIn detection
+            const isLinkedIn = userAgentLower.includes('linkedin');
+            
+            // Snapchat detection
+            const isSnapchat = userAgentLower.includes('snapchat');
+            
+            // WhatsApp detection
+            const isWhatsApp = userAgentLower.includes('whatsapp');
+            
+            // Generic WebView detection (Android)
+            const hasWebViewMarker = userAgent.includes('; wv)') || userAgentLower.includes('webview');
+            
+            // iOS WebView detection (lacks Safari identifier)
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+            const isIOSWebView = isIOS && !userAgentLower.includes('safari') && userAgentLower.includes('mobile');
+            
+            // Determine platform
+            let platform = 'regular browser';
+            if (isTikTok) platform = 'tiktok';
+            else if (isFacebook) platform = 'facebook';
+            else if (isInstagram) platform = 'instagram';
+            else if (isTwitter) platform = 'twitter';
+            else if (isLinkedIn) platform = 'linkedin';
+            else if (isSnapchat) platform = 'snapchat';
+            else if (isWhatsApp) platform = 'whatsapp';
+            else if (hasWebViewMarker) platform = 'generic webview';
+            else if (isIOSWebView) platform = 'ios webview';
+            
+            const isAnyWebView = isTikTok || isFacebook || isInstagram || isTwitter || 
+                                isLinkedIn || isSnapchat || isWhatsApp || hasWebViewMarker || isIOSWebView;
             
             return {
                 isTikTok,
                 isFacebook,
-                isWebView: isTikTok || isFacebook,
-                platform: isTikTok ? 'tiktok' : isFacebook ? 'facebook' : 'regular browser'
+                isInstagram,
+                isTwitter,
+                isLinkedIn,
+                isSnapchat,
+                isWhatsApp,
+                hasWebViewMarker,
+                isIOSWebView,
+                isWebView: isAnyWebView,
+                platform,
+                allDetections: {
+                    tiktok: isTikTok,
+                    facebook: isFacebook,
+                    instagram: isInstagram,
+                    twitter: isTwitter,
+                    linkedin: isLinkedIn,
+                    snapchat: isSnapchat,
+                    whatsapp: isWhatsApp,
+                    genericWebView: hasWebViewMarker,
+                    iosWebView: isIOSWebView
+                }
             };
         }
 
@@ -409,19 +486,67 @@
                 const banner = document.createElement('div');
                 
                 let instructions = '';
-                let bgColor = '#1877f2'; // Facebook blue default
+                let bgColor = '#1877f2'; // Default blue
+                let emoji = '🌐';
                 
-                if (webview.platform === 'tiktok') {
-                    bgColor = '#000000'; // TikTok black
-                    instructions = '🎵 TikTok detected! For the best experience, tap "Open browser" or the share button and select your browser.';
-                } else if (webview.platform === 'facebook') {
-                    instructions = '📘 Facebook detected! For the best experience, tap the three dots (⋯) and select "Open in browser".';
+                switch (webview.platform) {
+                    case 'tiktok':
+                        bgColor = '#000000';
+                        emoji = '🎵';
+                        instructions = 'TikTok detected! Tap "Open browser" or the share button and select your browser.';
+                        break;
+                    case 'facebook':
+                        bgColor = '#1877f2';
+                        emoji = '📘';
+                        instructions = 'Facebook detected! Tap the three dots (⋯) and select "Open in browser".';
+                        break;
+                    case 'instagram':
+                        bgColor = '#E4405F';
+                        emoji = '📷';
+                        instructions = 'Instagram detected! Tap the three dots (⋯) and select "Open in browser".';
+                        break;
+                    case 'twitter':
+                        bgColor = '#1DA1F2';
+                        emoji = '🐦';
+                        instructions = 'Twitter detected! Tap the share button and select "Open in browser".';
+                        break;
+                    case 'linkedin':
+                        bgColor = '#0077B5';
+                        emoji = '💼';
+                        instructions = 'LinkedIn detected! Tap the three dots (⋯) and select "Open in browser".';
+                        break;
+                    case 'snapchat':
+                        bgColor = '#FFFC00';
+                        emoji = '👻';
+                        instructions = 'Snapchat detected! Tap and hold the link, then select "Open in browser".';
+                        break;
+                    case 'whatsapp':
+                        bgColor = '#25D366';
+                        emoji = '💬';
+                        instructions = 'WhatsApp detected! Tap the three dots (⋯) and select "Open in browser".';
+                        break;
+                    case 'generic webview':
+                        bgColor = '#6c757d';
+                        emoji = '📱';
+                        instructions = 'In-app browser detected! Look for browser or share options to open externally.';
+                        break;
+                    case 'ios webview':
+                        bgColor = '#007AFF';
+                        emoji = '📱';
+                        instructions = 'iOS in-app browser detected! Look for "Open in Safari" or share options.';
+                        break;
+                    default:
+                        bgColor = '#6c757d';
+                        emoji = '🌐';
+                        instructions = 'In-app browser detected! Look for options to open in your default browser.';
                 }
+                
+                const textColor = (bgColor === '#FFFC00') ? '#000' : '#fff'; // Black text for yellow Snapchat
                 
                 banner.innerHTML = `
                     <div id="webview-banner" style="
                         background: ${bgColor}; 
-                        color: white; 
+                        color: ${textColor}; 
                         padding: 12px 16px; 
                         text-align: center; 
                         position: fixed; 
@@ -436,7 +561,7 @@
                         animation: slideDown 0.3s ease-out;
                     ">
                         <div style="max-width: 600px; margin: 0 auto; position: relative;">
-                            ${instructions}
+                            ${emoji} ${instructions}
                             <button onclick="hideBanner()" 
                                     style="
                                         position: absolute; 
@@ -445,7 +570,7 @@
                                         transform: translateY(-50%);
                                         background: none; 
                                         border: none; 
-                                        color: white; 
+                                        color: ${textColor}; 
                                         font-size: 20px; 
                                         cursor: pointer;
                                         padding: 0;
@@ -630,11 +755,17 @@
             document.getElementById('platform').textContent = webview.platform;
             document.getElementById('platform').className = `status-value ${webview.platform !== 'regular browser'}`;
             
-            document.getElementById('isTikTok').textContent = webview.isTikTok;
-            document.getElementById('isTikTok').className = `status-value ${webview.isTikTok}`;
-            
-            document.getElementById('isFacebook').textContent = webview.isFacebook;
-            document.getElementById('isFacebook').className = `status-value ${webview.isFacebook}`;
+            // Update all detection results
+            Object.keys(webview.allDetections).forEach(key => {
+                const elementId = key === 'genericWebView' ? 'hasWebViewMarker' : 
+                                 key === 'iosWebView' ? 'isIOSWebView' : 
+                                 `is${key.charAt(0).toUpperCase() + key.slice(1)}`;
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.textContent = webview.allDetections[key];
+                    element.className = `status-value ${webview.allDetections[key]}`;
+                }
+            });
             
             document.getElementById('isWebView').textContent = webview.isWebView;
             document.getElementById('isWebView').className = `status-value ${webview.isWebView}`;
@@ -653,6 +784,9 @@
             }
             
             logTestResult(`Page initialized. Platform: ${webview.platform}, OS: ${os}`, 'success');
+            
+            // Log all detections for debugging
+            logTestResult(`Detections: ${JSON.stringify(webview.allDetections, null, 2)}`, 'info');
         }
 
         // Initialize when DOM is loaded
