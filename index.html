@@ -256,7 +256,9 @@
             <div class="instructions">
                 <h3>📋 How to Test</h3>
                 <ul>
-                    <li><strong>Primary Test:</strong> The "🎵 Open Noice.id" button tests your specific URL with login parameters</li>
+                    <li><strong>Primary Test:</strong> The "🎵 Open Noice.id" button tests your specific URL with standard webview escape</li>
+                    <li><strong>System Browser:</strong> The "🔧 System Browser" button simulates Cordova/Electron `_system` behavior</li>
+                    <li><strong>All Methods:</strong> The "🚀 Test All System Methods" runs multiple approaches sequentially</li>
                     <li><strong>TikTok:</strong> Share this page link in a TikTok post or add to your bio, then open from the TikTok app</li>
                     <li><strong>Facebook:</strong> Share this page link in a Facebook post or message, then open from the Facebook app</li>
                     <li><strong>Instagram:</strong> Share this page link in your Instagram story or bio, then open from the Instagram app</li>
@@ -271,6 +273,9 @@
             <div class="button-grid">
                 <button class="test-button" onclick="testExternalBrowser('https://open-uat.noice.id/content/e5e90eeb-8acd-494f-9c84-103c10a6a108?attempt-login=true')">
                     🎵 Open Noice.id (Primary Test)
+                </button>
+                <button class="test-button" onclick="openInSystemBrowser('https://open-uat.noice.id/content/e5e90eeb-8acd-494f-9c84-103c10a6a108?attempt-login=true')">
+                    🔧 System Browser (Noice.id)
                 </button>
                 <button class="test-button" onclick="testExternalBrowser('https://www.google.com')">
                     🔗 Open Google.com
@@ -292,6 +297,9 @@
                 </button>
                 <button class="test-button" onclick="testDirectLink()">
                     🎯 Test Direct Noice Link
+                </button>
+                <button class="test-button danger" onclick="testSystemBrowserMethods('https://open-uat.noice.id/content/e5e90eeb-8acd-494f-9c84-103c10a6a108?attempt-login=true')">
+                    🚀 Test All System Methods
                 </button>
             </div>
 
@@ -396,7 +404,7 @@
             };
         }
 
-        // Force open in external browser for both TikTok and Facebook
+        // Force open in external browser for all supported platforms
         function openInExternalBrowser(url) {
             const webview = detectWebView();
             let method = 'standard';
@@ -406,7 +414,7 @@
                 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                 
                 if (isAndroid) {
-                    // Method 1: Android intent URL
+                    // Method 1: Android intent URL (most reliable for webviews)
                     const intentUrl = `intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;action=android.intent.action.VIEW;end`;
                     method = 'android-intent';
                     
@@ -425,6 +433,15 @@
                     
                 } else if (isIOS) {
                     method = 'ios-multiple';
+                    
+                    // Try _system approach first (for Cordova-like environments)
+                    try {
+                        if (window.open(url, '_system')) {
+                            logTestResult(`iOS: Attempted _system target (Cordova-style)`, 'success');
+                        }
+                    } catch (e) {
+                        logTestResult(`iOS: _system target failed: ${e.message}`, 'warning');
+                    }
                     
                     // Create and click link with target="_blank"
                     const link = document.createElement('a');
@@ -470,6 +487,145 @@
             }
             
             return method;
+        }
+
+        // Simulate _system behavior for different environments
+        function openInSystemBrowser(url) {
+            const webview = detectWebView();
+            logTestResult(`Testing system browser opening for: ${url}`, 'info');
+            
+            // Check if we're in a Cordova/PhoneGap environment
+            if (typeof window.cordova !== 'undefined' && window.cordova.InAppBrowser) {
+                try {
+                    window.cordova.InAppBrowser.open(url, '_system');
+                    logTestResult(`Cordova: Used InAppBrowser._system`, 'success');
+                    return 'cordova-system';
+                } catch (e) {
+                    logTestResult(`Cordova InAppBrowser failed: ${e.message}`, 'error');
+                }
+            }
+            
+            // Check if we're in an Electron environment
+            if (typeof window.require !== 'undefined') {
+                try {
+                    const { shell } = window.require('electron');
+                    shell.openExternal(url);
+                    logTestResult(`Electron: Used shell.openExternal()`, 'success');
+                    return 'electron-system';
+                } catch (e) {
+                    logTestResult(`Electron shell.openExternal failed: ${e.message}`, 'error');
+                }
+            }
+            
+            // For web environments, use our enhanced webview escape methods
+            const isAndroid = navigator.userAgent.includes('Android');
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            
+            if (webview.isWebView && isAndroid) {
+                // Android: Use intent URL to force system browser
+                const intentUrl = `intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(url)};end`;
+                try {
+                    window.location.href = intentUrl;
+                    logTestResult(`Android: Used enhanced intent URL with fallback`, 'success');
+                    return 'android-intent-enhanced';
+                } catch (e) {
+                    logTestResult(`Android enhanced intent failed: ${e.message}`, 'error');
+                }
+            }
+            
+            if (webview.isWebView && isIOS) {
+                // iOS: Try multiple approaches
+                
+                // Method 1: Try custom URL scheme
+                try {
+                    const safariUrl = `x-web-search://?${encodeURIComponent(url)}`;
+                    window.location.href = safariUrl;
+                    logTestResult(`iOS: Attempted Safari URL scheme`, 'success');
+                } catch (e) {
+                    logTestResult(`iOS Safari URL scheme failed: ${e.message}`, 'warning');
+                }
+                
+                // Method 2: Force target="_blank" with user gesture
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.style.display = 'none';
+                    
+                    document.body.appendChild(link);
+                    
+                    // Simulate user click
+                    const event = new MouseEvent('click', {
+                        bubbles: true,
+                        cancelable: true,
+                        view: window,
+                        detail: 1
+                    });
+                    
+                    link.dispatchEvent(event);
+                    document.body.removeChild(link);
+                    logTestResult(`iOS: Used simulated user gesture click`, 'success');
+                }, 100);
+                
+                return 'ios-multi-approach';
+            }
+            
+            // Fallback: Standard window.open
+            try {
+                window.open(url, '_blank', 'noopener,noreferrer');
+                logTestResult(`Fallback: Used standard window.open()`, 'info');
+                return 'standard-fallback';
+            } catch (e) {
+                logTestResult(`All methods failed: ${e.message}`, 'error');
+                return 'failed';
+            }
+        }
+
+        // Test different system browser opening approaches
+        function testSystemBrowserMethods(url) {
+            logTestResult(`=== Testing System Browser Methods ===`, 'info');
+            
+            const webview = detectWebView();
+            const isAndroid = navigator.userAgent.includes('Android');
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            
+            // Method 1: Standard approach
+            logTestResult(`Method 1: Standard openInExternalBrowser()`, 'info');
+            setTimeout(() => openInExternalBrowser(url), 500);
+            
+            // Method 2: System browser simulation
+            logTestResult(`Method 2: System browser simulation`, 'info');
+            setTimeout(() => openInSystemBrowser(url), 1000);
+            
+            // Method 3: Platform-specific enhanced approaches
+            if (isAndroid && webview.isWebView) {
+                logTestResult(`Method 3: Android-specific enhancements`, 'info');
+                setTimeout(() => {
+                    // Try Chrome intent specifically
+                    const chromeIntent = `intent://${url.replace(/https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
+                    try {
+                        window.location.href = chromeIntent;
+                        logTestResult(`Android: Attempted Chrome-specific intent`, 'success');
+                    } catch (e) {
+                        logTestResult(`Android Chrome intent failed: ${e.message}`, 'error');
+                    }
+                }, 1500);
+            }
+            
+            if (isIOS && webview.isWebView) {
+                logTestResult(`Method 3: iOS-specific enhancements`, 'info');
+                setTimeout(() => {
+                    // Try iOS universal links approach
+                    try {
+                        const universalLink = `https://open.browser.link?url=${encodeURIComponent(url)}`;
+                        window.location.href = universalLink;
+                        logTestResult(`iOS: Attempted universal link approach`, 'success');
+                    } catch (e) {
+                        logTestResult(`iOS universal link failed: ${e.message}`, 'error');
+                    }
+                }, 1500);
+            }
         }
 
         // Show platform-specific instruction banner
