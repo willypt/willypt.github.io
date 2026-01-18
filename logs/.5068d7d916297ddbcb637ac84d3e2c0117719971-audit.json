@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/willypt/Work/private/willypt.github.io/logs/.5068d7d916297ddbcb637ac84d3e2c0117719971-audit.json",
+    "files": [
+        {
+            "date": 1768746029536,
+            "name": "/Users/willypt/Work/private/willypt.github.io/logs/mcp-puppeteer-2026-01-18.log",
+            "hash": "7c9c16cdfcc717de09cdd5c5a1a27937c29056b67598fd632b95f4320f3b6208"
+        }
+    ],
+    "hashType": "sha256"
+}
